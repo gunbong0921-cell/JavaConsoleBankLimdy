@@ -15,19 +15,25 @@ public class Account {
         this.balance += money;
     }
 
+    protected void addPureMoney(int money) {
+        this.balance += money;
+    }
+
     public void withdraw(int money) {
         if (this.balance >= money) {
             this.balance -= money;
-        } 
-        else {
+        } else {
             System.out.println("잔액이 부족합니다.");
         }
     }
 
     public String getAccountId() { return accountId; }
+    public String getCustomerName() { return customerName; }
     public int getBalance() { return balance; }
 
     public void showAccountInfo() {
-        System.out.printf("계좌번호: %s | 고객이름: %s | 잔고: %,d원\n", accountId, customerName, balance);
+        System.out.println("계좌번호>" + accountId);
+        System.out.println("고객이름>" + customerName);
+        System.out.println("잔고>" + balance);
     }
 }

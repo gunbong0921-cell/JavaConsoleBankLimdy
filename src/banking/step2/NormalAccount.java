@@ -19,6 +19,9 @@ public class NormalAccount extends Account {
     @Override
     public void showAccountInfo() {
         super.showAccountInfo();
-        System.out.println("  [보통계좌 이율: " + interestRate + "%]");
+        System.out.println("기본이자>" + interestRate + "%");
+    }
+    public int getInterestRate() {
+        return interestRate;
     }
 }

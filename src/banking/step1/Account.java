@@ -28,6 +28,12 @@ public class Account {
     public int getBalance() { return balance; }
 
     public void showAccountInfo() {
-        System.out.printf("계좌번호: %s | 고객이름: %s | 잔고: %,d원\n", accountId, customerName, balance);
+    	System.out.println("***계좌정보출력***");
+        System.out.println("-------------");
+        System.out.println("계좌번호 : " + accountId);
+        System.out.println("고객이름 : " + customerName);
+        System.out.println("잔고 : " + balance);
+        System.out.println("-------------");
+        System.out.println("전체계좌정보 출력이 완료되었습니다.");
     }
 }
