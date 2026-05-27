@@ -1,7 +1,7 @@
 package banking.step2;
 
 public interface ICustomDefine {
-	
+	//github연동
     int MAKE = 1;
     int DEPOSIT = 2;
     int WITHDRAW = 3;
