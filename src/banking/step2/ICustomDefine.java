@@ -2,6 +2,7 @@ package banking.step2;
 
 public interface ICustomDefine {
 	//github연동
+	//연동 완료 후 커밋&푸시
     int MAKE = 1;
     int DEPOSIT = 2;
     int WITHDRAW = 3;
