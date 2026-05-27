@@ -58,7 +58,8 @@ public class BankingSystemMain {
                         System.out.println("잘못된 등급 선택입니다. 기본 0% 우대이율이 적용됩니다.");
                     }
 
-                    HighCreditAccount highAcc = new HighCreditAccount(id, name, balance, interestRate, creditRate, creditStr.toUpperCase());
+                    HighCreditAccount highAcc = new HighCreditAccount
+                    		(id, name, balance, interestRate, creditRate, creditStr.toUpperCase());
                     manager.makeAccount(highAcc);
                 } 
                 else {
