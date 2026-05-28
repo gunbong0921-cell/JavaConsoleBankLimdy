@@ -1,4 +1,4 @@
-package banking.step3;
+package banking.step4;
 
 public interface ICustomDefine {
 	//github연동
@@ -7,7 +7,8 @@ public interface ICustomDefine {
     int DEPOSIT = 2; //입금
     int WITHDRAW = 3; //출금
     int INQUIRE = 4; //계좌정보출력
-    int EXIT = 5; //종료 
+    int DELETE = 5; //계좌정보삭제 (4단계 추가)
+    int EXIT = 6; //종료 
 
     int LEVEL_A = 7; //이자율
     int LEVEL_B = 4; //이자율

@@ -31,7 +31,12 @@ public abstract class Account {
         this.balance = 0;
         return allMoney;
     }
-
+    
+    /*
+    { return  ; }
+    : 해당 메서드가 종료되면서 accountId 변수값을 호출한 곳으로
+    반환하는 구문. 주로 Getter 메서드나 조회 로직에서 사용
+    */
     public String getAccountId() { return accountId; }
     public String getCustomerName() { return customerName; }
     public int getBalance() { return balance; }
