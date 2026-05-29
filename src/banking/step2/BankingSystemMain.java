@@ -37,12 +37,23 @@ public class BankingSystemMain {
                 int balance = sc.nextInt();
                 System.out.print("기본이자%(정수의형태로입력): "); 
                 int interestRate = sc.nextInt();
-
+                /*
+                보통계좌(accountType == 1)
+                -기본정보와 이자율(interestRate)을 받아 NormalAccount(보통이율계좌)객체 생성
+                -생성된 객체를 manager.makeAccount()메서드로 전달하여 매니저 배열에 저장
+                 */
                 if (accountType == 1) {
-                    NormalAccount normalAcc = new NormalAccount(id, name, balance, interestRate);
+                    NormalAccount normalAcc = new NormalAccount
+                    		(id, name, balance, interestRate);
                     manager.makeAccount(normalAcc);
                 }
-                
+                /*
+                신용신뢰계좌
+                1.입력받은 문자열을 .toUpperCase()를 통해 대문자로 변환한 뒤 ICustomerDefine.LEVEL_A
+                등 인터페이스에 미리 정의된 신용등급별 우대이율(creditRate)을 매칭
+                2. 최종적으로 기본이자에 우대이자 혜택을 더해 HighCreditAccount(고신용계좌)객체를
+                생성해 매니저에게 전달
+                 */
                 if (accountType == 2) {
                     System.out.print("신용등급 선택(A, B, C등급): ");
                     String creditStr = sc.next(); 

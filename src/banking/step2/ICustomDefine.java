@@ -1,15 +1,14 @@
 package banking.step2;
 
 public interface ICustomDefine {
-	//github연동
-	//연동 완료 후 커밋&푸시
-    int MAKE = 1;
-    int DEPOSIT = 2;
-    int WITHDRAW = 3;
-    int INQUIRE = 4;
-    int EXIT = 5;
+	
+    int MAKE = 1; //계좌개설
+    int DEPOSIT = 2; //입금
+    int WITHDRAW = 3; //출금
+    int INQUIRE = 4; //전체계좌정보출력
+    int EXIT = 5; //프로그램종료
 
-    int LEVEL_A = 7;
-    int LEVEL_B = 4;
-    int LEVEL_C = 2;
+    int LEVEL_A = 7; //A등급우대이율 7%
+    int LEVEL_B = 4; //B등급우대이율 4%
+    int LEVEL_C = 2; //C등급우대이율 2%
 }

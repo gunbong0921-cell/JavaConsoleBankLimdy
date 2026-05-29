@@ -1,7 +1,13 @@
 package banking.step5;
 
 import java.util.Scanner;
-
+/*
+프로그램 시작 시 데이터 자동복원(loadInfo)
+-while무한루프(메뉴)에 진입하기 직전 최우선으로 manager.loadInfo()를 호출
+-이전에 프로그램을 종료하면서 저장해 두었던 AccountInfo.obj파일이 있다면 그안의
+	HashSet데이터를 통째로 역직렬화하여 메모리에 먼저 얹어둠. 덕분에 사용자는 프로그램을
+	재시작해도 과거에 개설한 계좌들을 끊김없이 이용할수 있게 됨 
+ */
 public class BankingSystemMain {
     public static void main(String[] args) {
         AccountManager manager = new AccountManager();
@@ -18,7 +24,13 @@ public class BankingSystemMain {
             System.out.print("선택: ");
             
             int menu = sc.nextInt();
-
+            /*
+            프로그램종료시 데이터자동백업(saveInfo)
+            -사용자가 종료를 입력해 while루프를 탈출(break)하기 직전, manager.saveInfo()
+            를 강제로 실행
+            -새로 개설된 신규계좌, 삭제된계좌 정보등 메모리상에 머물던 최신 HashSet상태를 디스크
+            파일(AccountInfo.obj)로 안전하게 저장하고 프로그램을 종료
+             */
             if (menu == 6) {
                 // [중요] 종료 선택 시 데이터를 파일에 백업 저장
                 manager.saveInfo();

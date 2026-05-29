@@ -37,7 +37,13 @@ public abstract class Account {
     public String getAccountId() { return accountId; }
     public String getCustomerName() { return customerName; }
     public int getBalance() { return balance; }
-
+    /*
+    출력형식최적화(showAccountInfo)
+    -기존 줄바꿈형태(println)대신 System.out.printf()를 사용하여 한줄에 포맷팅
+    되어 출력되도록 변경
+    -부모클래스에서 직접 구현문장을 제공함으로써 자식클래스들이 더 편리하게 재활용할 수
+    있게됨
+     */
     public void showAccountInfo() {
         System.out.printf
         ("계좌번호: %s, 고객이름: %s, 잔고: %d\n", accountId, 

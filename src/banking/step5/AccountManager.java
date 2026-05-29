@@ -8,7 +8,18 @@ public class AccountManager {
     private HashSet<Account> accounts = new HashSet<>();
     // 5단계 동영상에 명시된 파일 이름
     private final String FILE_NAME = "AccountInfo.obj";
-
+    
+    /*
+    테이터파일저장 로직(saveInfo)
+    -ObjectOutStream
+     : 객체를 바이트 스트림으로 변환해주는 직렬화 전용 필터 스트림
+    -동작
+     : accounts라는 HashSet 객체자체를 writObject()메서드 한줄로 AccountInfo.obj파일에
+     	저장됨. 셋(Set)안에 들어있던 수많은 계좌(자식계좌포함)들이 고스란히 파일로 변환되어 기록됨
+    -try-with-resources
+     : try(...)괄호안에 스트림을 생성하여 작업이 끝난 후 에러 발생여부와 상관없이 자원(close())
+       	이 자동으로 반환되도록 절계
+     */
     // 파일 저장 (직렬화)
     public void saveInfo() {
         try (ObjectOutputStream oos = new ObjectOutputStream
@@ -20,7 +31,20 @@ public class AccountManager {
             System.out.println("데이터 저장 오류: " + e.getMessage());
         }
     }
-
+    
+    /*
+    데이터파일 복원 로직(loadInfo)
+    1.역질렬화(readObject())
+    디스크에 바이트 형태로 굳어있는 데이터를 다시 자바 메모리 상의 객체(HashSet)로 엮어내는
+    (역질렬화)작업
+    2.@SuppressWarnings("unchecked")
+    파일애서 읽어온 객체가 진짜 HashSet<Account>타입이 맞는지 컴파일러가 완전히 확신할 수 
+    없기 때문에 경고(Warning)를 띄움. 개발자가 안전함을 담보하니 경고를 무시하라고 지시하는
+    어노테이션
+    3.멀티캐치( | )
+    파일 입출력오류(IOException)와 더불어 저장할 당시의 클래스 설계도를 찾을 수 없는 오류
+    (ClassNotFoundException)를 한곳에서 묶어 처리
+     */
     // 파일 로드 (역직렬화)
     @SuppressWarnings("unchecked")
     public void loadInfo() {
