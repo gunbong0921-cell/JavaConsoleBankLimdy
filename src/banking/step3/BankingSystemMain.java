@@ -93,7 +93,7 @@ public class BankingSystemMain {
                 }
             } 
             catch (MenuSelectException e) {
-                // 영상 속 "선택: 99 -> 메뉴 입력 예외발생." 핸들링 화면 구현
+                // 영상 속 "선택: 99 -> 메뉴 입력 예외발생." 화면 구현
                 System.out.println(e.getMessage());
             } 
             catch (Exception e) {

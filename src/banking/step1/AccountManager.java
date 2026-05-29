@@ -3,7 +3,10 @@ package banking.step1;
 public class AccountManager {
     private Account[] accounts = new Account[100];
     private int numOfAccounts = 0;
-
+    
+    /*
+    계좌개설기능(makeAccount)
+     */
     public void makeAccount(String id, String name, int balance) {
         accounts[numOfAccounts++] = new Account(id, name, balance);
         System.out.println("계좌 개설이 완료되었습니다.");
