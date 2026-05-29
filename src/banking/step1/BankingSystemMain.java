@@ -6,6 +6,7 @@ public class BankingSystemMain {
 	//1.1
 	//2.2-1
 	//3.2-2
+	//4.커밋/푸시/클론 성공
     public static void main(String[] args) {
     	
         Scanner sc = new Scanner(System.in);
